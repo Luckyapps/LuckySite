@@ -1,0 +1,93 @@
+footer{
+    background-color: rgb(64, 64, 64);
+    padding: 40px 10% 10px 10%;
+    color: rgb(242, 242, 242);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.fLang{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 0 15px 0;
+    border-bottom: 2px solid rgb(242, 242, 242);
+}
+
+.fLang a{
+    color:rgb(242, 242, 242);
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.fLangSelected{
+    font-weight: bold;
+}
+
+.fPath{
+    display: flex;
+    align-items: center;
+    gap:5px;
+    padding: 15px 0 15px 0;
+}
+
+.fPath a{
+    text-decoration: none;
+    color: rgb(242, 242, 242);
+    display: flex;
+}
+
+.fPath a:hover{
+    text-decoration: underline;
+}
+
+.fPath img{
+    height: 1.5em;
+}
+
+.fLinks{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 0 30px 30px 0;
+}
+
+.fLinklist{
+    display: flex;
+    flex-direction: column;
+}
+
+.fLinklist>div{
+    font-weight: bold;
+}
+
+.fLinklist a{
+    color:rgb(242, 242, 242);
+    text-decoration: none;
+}
+
+.fLinklist a:hover{
+    text-decoration: underline;
+}
+
+.fFootnote{
+    font-size: 0.8em;
+    border-top:1px solid rgb(242, 242, 242);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap:20px;
+    padding: 3px 0 0 0;
+}
+
+.fVersion a{
+    color:rgb(242, 242, 242);
+    text-decoration: none;
+}
+
+.fVersion a:hover{
+    text-decoration: underline;
+}

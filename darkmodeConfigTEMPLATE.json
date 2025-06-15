@@ -1,0 +1,15 @@
+{
+    "classes":{
+        "classTitle":{
+            "styles":{
+                "stylename": "value"
+            },
+            "classes":{
+                "add":[],
+                "remove":[]
+            }
+        }
+    },
+    "ids":{},
+    "tags":{}
+}

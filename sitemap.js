@@ -14,6 +14,10 @@ var sitemap = {
         de: {
             link: "/de/",
             name: "Home"
+        },
+        en: {
+            link: "/de/",
+            name: "Home"
         }
     },
     documentation:{
@@ -25,48 +29,40 @@ var sitemap = {
     },
     updates: {
         de: {
-            link: "/updates.html",
+            link: "/de/wartung/",
             name: luckySite.version
         },
         en: {
-            link: "/updates.html",
+            link: "/de/wartung/",
             name: luckySite.version
         },
         fr: {
-            link: "/updates.html",
+            link: "/de/wartung/",
             name: luckySite.version
         },
         es: {
-            link: "/updates.html",
+            link: "/de/wartung/",
             name: luckySite.version
         },
         pl: {
-            link: "/updates.html",
+            link: "/de/wartung/",
             name: luckySite.version
         },
         ch: {
-            link: "/updates.html",
+            link: "/de/wartung/",
             name: luckySite.version
         }
     },
     maintenance: {
         de: {
             link: "/de/wartung/",
-            path: "Wartung der Seite"
-        },
-        en: {
-            link: "/en/maintenance/",
-            path: "Page under Maintenance"
-        },
-        ch: {
-            link: "/ch/%E7%BB%B4%E6%8A%A4/",
-            path: "维护"
+            name: "Wartung der Seite"
         },
         parent: "home"
     },
     autolinkdoc:{
         de:{
-            link: "/autolinkdoc.html",
+            link: "/dokumentation/autolinkdoc.html",
             name: "AutoLink Dokumentation"
         }
     },

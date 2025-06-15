@@ -1,0 +1,37 @@
+{
+    "classes":{
+        "headerTitle": {
+            "styles":{
+                "background": "rgba(0,0,0,0.66)"
+            }
+        },
+        "article_container":{
+            "classes": {
+                "add": ["dm_back"],
+                "remove": []
+            }
+        },
+        "article_title":{
+            "classes":{
+                "add":["dm_text"]
+            }
+        },
+        "reg_section":{
+            "classes":{
+                "add":["dm_back","dm_text"]
+            }
+        },
+        "quellenContainer":{
+            "classes":{
+                "add":["dm_text"]
+            }
+        }
+    },
+    "tags":{
+        "body":{
+            "classes":{
+                "add":["dm_back","dm_text"]
+            }
+        }
+    }
+}

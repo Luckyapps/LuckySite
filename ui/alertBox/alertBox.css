@@ -50,7 +50,7 @@
 }
 
 @media screen and (max-width: 650px) { /*Wenn die Displaybreite kleiner als 650px*/
-    #error_container{
-        /*bottom: 40px;*/
-    }
+    /*#error_container{
+        bottom: 40px;
+    }*/
 }

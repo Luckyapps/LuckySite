@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body style="margin:5px">
+        <script src="/LuckySiteUtil.js"></script> 
+        <script src="/LuckySiteCore.js"></script>
+
+        <nav></nav>
+        
+
+        <h1>AutoLink Dokumentation 👋</h1>
+        <div style="display:flex; gap: 20px;">
+            <a href="#Was ist das?">Was ist das?</a>
+            <a href="#Arten">Arten</a>
+            <a href="#Definition">Definiern und verwalten von AutoLinks</a>
+            <a href="#Attribute">Attribute</a>
+        </div>
+
+
+        <h2 id="Was ist das?">Was ist AutoLink?</h2>
+            <p>AutoLink ist ein System, um eine Einfache verwaltung von Links über eine Website hinweg zu ermöglichen. Dabei können alle Links von einer zentralen Stelle (einem JS-Object) gesteuert werden. Das umfasst z.B. den Pfad, den Namen, ... .</p>
+            <p>Hervorzuheben ist auch die einfache verwaltung von Links Sprachübergreifend. Denn in Kombination mit dem Linkmanager kann der Link automatisch in der entsprechenden Sprache angezeigt werden.</p>
+            <p>Bei aller Einfachheit bleibt allerdings trotzdem ein großer anpassungsspielraum durch viele Einstellungsmölichkeiten für bestimmte Links.</p>
+
+        <h2 id="Arten">Arten von Autolinks</h2>
+            <p>Es werden grundsätzlich zwei Arten von AutoLinks unterschieden: <i>onsite</i> und <i>offsite</i>. Das bedeutet es gibt Links zu Seiten auf der eigenen Website und "freie" Links.</p>
+            <h3><i>onsite</i> autoLinks</h3>
+                <p><i>onsite</i> autoLinks sind autoLinks, die auf einen andere Seite der eigenen Website verweisen. Sie sind die Standard-Linkart</p>
+                <h4>Definition</h4>
+                    <p><i>onsite</i> autoLinks werden in der <i>sitemap.js</i> im <i>sitemap</i> Object definiert.</p>
+            <h3><i>offsite</i> autoLinks</h3>
+                <p><i>offsite</i> autoLinks sind autoLinks, die auf irgendetwas verweisen und können frei gewählt werden.</p>
+                <h4>Definition</h4>
+                    <p><i>offsite</i> autoLinks werden in der <i>linkmanager.js</i> im <i>ahorn.autoLinks</i> Object definiert.</p>
+        
+        <h2 id="Definition">Definieren und verwalten von AutoLinks</h2>
+            <p>Um autoLinks zu verwenden müssen diese in der sitemap.js, oder der linkmanager.js definiert werden.</p>
+            <h3>Format</h3>
+                <p>Für <i>offsite</i> autoLinks muss ein Object der folgenden Art in <i>ahorn.autoLinks</i> hinzugefügt werden:</p>
+                <pre>
+template: {
+    name: "", //Standard Anzeigename
+    href: "", //Standard Link
+    download_name: "", //Name und Dateipräfix der Downloaddatei (optional)
+    download_force: true, //Verhindert downloadToLink (optional)
+    langs: { //Hier können Sprachspezifische änderungen definiert werden (optional)
+        de: { //Id der Sprache
+            name: "", //Parameter, die geändert werden sollen
+            href: ""
+        },
+        en: {
+            name: "",
+            href: "",
+            download_name: ""
+        }
+    }
+},
+                </pre>
+            <h3>Attribute</h3>
+                <ul>
+                    <li>Name
+                        <ul>
+                            <li>Standard Anzeigename</li>
+                        </ul>
+                    </li>
+                    <li>href 
+                        <ul>
+                            <li>Standard Link</li>
+                        </ul>
+                    </li>
+                    <li>download_name
+                        <ul>
+                            <li>optional</li>
+                            <li>Nur für Downloadlinks</li>
+                            <li>Name und Dateipräfix der Downloaddatei</li>
+                        </ul>
+                    </li>
+                    <li>download_force
+                        <ul>
+                            <li>optional</li>
+                            <li>Nur für Downloadlinks</li>
+                            <li>Überschreibt die downloadToLink Einstellung.</li>
+                        </ul>
+                    </li>
+                    <li>langs
+                        <ul>
+                            <li>optional</li>
+                            <li>Hier können Werte für bestimmte Sprachen angepasst werden.</li>
+                            <li>Hier definierte Werte überschreiben die default Werte.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+        <h2 id="Attribute">AutoLink Attribute</h2>
+        <h3><i>autoLink-type</i></h3>
+        <p>Gibt die Art des autoLinks an.</p>
+        <p>Mögliche Werte sind:</p>
+        <ul>
+            <li>onsite<ul>
+                    <li>Standard Link auf der selben Seite</li>
+                    <li>Kann weggelassen werden.</li>
+                </ul>
+            </li>
+            <li>onsiteNOa<ul>
+                    <li>Ist ein onsite Link, der aber kein a-HTML-Element ist (&lt;a&gt;)</li>
+                </ul>
+            </li>
+            <li>offsite<ul>
+                    <li>Ist ein offsite Link</li>
+                    <li>offsite Links erkennen automatisch, ob es sich um ein a-HTML-Element (&lt;a&gt;) handelt und stellen automatisch um.</li>
+                    <li>Ist ein offsite Link kein a-HTML-Element (&lt;a&gt;) wird der Text standardmäßig nicht automatisch gesetzt.</li>
+                </ul>
+            </li>
+            <li>download<ul>
+                    <li>Ist ein offsite Link mit Download-Funktion</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <h3><i>autoLink-id</i></h3>
+        <p>Ist die Einzigartige <i>Id</i> des autoLinks mit der er auch definiert ist. Jede id darf nur einmal verwendet werden. In Ausnahmefällen kann für einen onsite und einen offsite Link die selbe id genutzt werden.</p>
+
+        <h3><i>autoLink-lang</i></h3>
+        <p>Normalerweise wird für den autoLink automatisch die Sprache der aktuellen Seite angewendet. Möchte man aber den Link für eine andere Sprache, kann man diese hier angeben.</p>
+        <p>Der Wert muss eine <i>lang_id</i> wie z.B. "de" oder "en" sein.</p>
+
+        <h3><i>autoLink-keepText</i></h3>
+        <p>Soll verhindert werden, dass bei einem normalen autoLink der Linktext automatisch gesetzt wird, muss dieses Attribut angegeben werden. Es ist kein Wert nötig (="" kann weggelassen werden.)</p>
+
+        <h3><i>autoLink-setText</i></h3>
+        <p>Setzt bei nicht a-HTML-Element (&lt;a&gt;) (z.B. bei autoLink-type="onsiteNOa" oder bei entsprechenden offsite Links) den Linktext trotzdem automatisch. Es ist kein Wert nötig (="" kann weggelassen werden.)</p>
+    </body>
+</html

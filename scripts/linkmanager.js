@@ -18,7 +18,7 @@ var linkmanager = {
                             var navbarList = customNavbar;
                             console.log("CustomNavbar angewendet");
                         }else{
-                            var navbarList = ["sources","impressum","home","planting","pinwall"];
+                            var navbarList = ["home","documentation", "autolinkdoc" ,"maintenance"];
                         }
                         linkmanager.pageData = {
                             siteId: siteId,
@@ -115,13 +115,13 @@ function setFooterPath(){
                     if(currentParent == luckySite.settings.homeId){ //Wenn Home, dann Bild hinzufügen
                         fPath.innerHTML += "<a href='"+ sitemap[currentParent][linkmanager.pageData.lang].link +"'>"+'<img alt="Home | luckySite Logo" src="/media/Logo_Idee_6.png"></a>';
                     }else{
-                        fPath.innerHTML += "<a href='"+ sitemap[currentParent][linkmanager.pageData.lang].link +"'><div>"+ sitemap[currentParent][linkmanager.pageData.lang].path +"</div></a>";
+                        fPath.innerHTML += "<a href='"+ sitemap[currentParent][linkmanager.pageData.lang].link +"'><div>"+ sitemap[currentParent][linkmanager.pageData.lang].name +"</div></a>";
                     }
                     var pathDivider = "<div>/</div>"; // Trennzeichen
                     fPath.innerHTML += pathDivider;
                 }
             }
-            fPath.innerHTML += "<a href='"+ linkmanager.pageData.data.link +"'><div>"+ linkmanager.pageData.data.path +"</div></a>";
+            fPath.innerHTML += "<a href='"+ linkmanager.pageData.data.link +"'><div>"+ linkmanager.pageData.data.name +"</div></a>";
         }catch(err){
             console.warn("Footer Path konnte nicht gesetzt werden.");
         }
@@ -239,39 +239,7 @@ async function initUniFooter(){
                     title: "Schnellverweis",
                     links: [
                         {autoLinkId: "home"},
-                        {autoLinkId: "pinwall"},
-                        {autoLinkId: "planting"},
-                        //{autoLinkId: "download"},
-                        {autoLinkId: "sources"},
-                        {autoLinkId: "impressum"} // WARUM DEUTSCH?
-                    ]
-                },
-                {
-                    title: "Soziale Medien",
-                    links: [
-                        {autoLinkId: "youtube", autoLinkType: "offsite"}
-                    ]
-                },
-                {
-                    title: "Vorgestellt",
-                    links: [
-                        //{autoLinkId: "matchofmemes", autoLinkType: "offsite"},
-                        {autoLinkId: "soundriseproductions", autoLinkType: "offsite"},
-                        //{autoLinkId: "luckyapps", autoLinkType: "offsite"}
-                    ]
-                },
-                {
-                    title: "Dateien",
-                    //titleLink: {autoLinkId: "download"},
-                    links: [
-                        //{autoLinkId: "download_documentation", autoLinkType: "download"},
-                        //{autoLinkId: "download_windows", autoLinkType: "download"},
-                        //{autoLinkId: "download",customText:"WebApp"},
-                        {autoLinkId: "KurzumrissGR", autoLinkType: "offsite"},
-                        {autoLinkId: "Pflanzanbieter", autoLinkType: "offsite"},
-                        {autoLinkId: "PflanzanbieterOffen", autoLinkType: "offsite"},
-                        {autoLinkId: "CO2Verarbeitung", autoLinkType: "offsite"},
-                        {autoLinkId: "CO2VerarbeitungOffen", autoLinkType: "offsite"},
+                        {autoLinkId: "documentation"},
                     ]
                 },
                 {
@@ -286,90 +254,11 @@ async function initUniFooter(){
                     title: "Quicklinks",
                     links: [
                         {autoLinkId: "home"},
-                        {autoLinkId: "pinwall"},
-                        {autoLinkId: "planting"},
-                        //{autoLinkId: "download"},
-                        {autoLinkId: "sources"},
-                        {autoLinkId: "impressum"}
-                    ]
-                },
-                {
-                    title: "Social Media",
-                    links: [
-                        {autoLinkId: "youtube", autoLinkType: "offsite"}
-                    ]
-                },
-                {
-                    title: "Featuring",
-                    links: [
-                        //{autoLinkId: "matchofmemes", autoLinkType: "offsite"},
-                        {autoLinkId: "soundriseproductions", autoLinkType: "offsite"},
-                        //{autoLinkId: "luckyapps", autoLinkType: "offsite"}
-                    ]
-                },
-                {
-                    title: "Files (German)",
-                    //titleLink: {autoLinkId: "download"},
-                    links: [
-                        //{autoLinkId: "download_documentation", autoLinkType: "download"},
-                        //{autoLinkId: "download_windows", autoLinkType: "download"},
-                        //{autoLinkId: "download",customText:"WebApp"},
-                        {autoLinkId: "KurzumrissGR", autoLinkType: "offsite", customText:"Summary Greenery Calc."},
-                        {autoLinkId: "Pflanzanbieter", autoLinkType: "offsite", customText:"Plantsupply"},
-                        {autoLinkId: "PflanzanbieterOffen", autoLinkType: "offsite", customText:"Plantsupply Public"},
-                        {autoLinkId: "CO2Verarbeitung", autoLinkType: "offsite", customText:"CO2 Processing"},
-                        {autoLinkId: "CO2VerarbeitungOffen", autoLinkType: "offsite", customText:"CO2 Processing Public"},
+                        {autoLinkId: "documentation"},
                     ]
                 },
                 {
                     title: "Other",
-                    hidden: true
-                }
-            ];
-            break;
-        case "ch"://Chinesisch
-            unifooter = [
-                {
-                    title: "快速链接",
-                    links: [
-                        {autoLinkId: "home"},
-                        {autoLinkId: "pinwall"},
-                        {autoLinkId: "planting"},
-                        //{autoLinkId: "download"},
-                        {autoLinkId: "sources"},
-                        {autoLinkId: "impressum"}
-                    ]
-                },
-                {
-                    title: "社交媒体",
-                    links: [
-                        {autoLinkId: "youtube", autoLinkType: "offsite"}
-                    ]
-                },
-                {
-                    title: "呈现",
-                    links: [
-                        //{autoLinkId: "matchofmemes", autoLinkType: "offsite"},
-                        {autoLinkId: "soundriseproductions", autoLinkType: "offsite"},
-                        //{autoLinkId: "luckyapps", autoLinkType: "offsite"}
-                    ]
-                },
-                {
-                    title: "下载",
-                    //titleLink: {autoLinkId: "download"},
-                    links: [
-                        //{autoLinkId: "download_documentation", autoLinkType: "download"},
-                        //{autoLinkId: "download_windows", autoLinkType: "download"},
-                        //{autoLinkId: "download",customText:"WebApp"},
-                        {autoLinkId: "KurzumrissGR", autoLinkType: "offsite", customText:"摘要绿化计算机"},
-                        {autoLinkId: "Pflanzanbieter", autoLinkType: "offsite", customText:"植物供应商"},
-                        {autoLinkId: "PflanzanbieterOffen", autoLinkType: "offsite", customText:"植物供应商公众"},
-                        {autoLinkId: "CO2Verarbeitung", autoLinkType: "offsite", customText:"二氧化碳处理"},
-                        {autoLinkId: "CO2VerarbeitungOffen", autoLinkType: "offsite", customText:"二氧化碳处理公众"},
-                    ]
-                },
-                {
-                    title: "其他",
                     hidden: true
                 }
             ];
@@ -377,46 +266,14 @@ async function initUniFooter(){
         default://Fallback
             unifooter = [
                 {
-                    title: "Quicklinks",
+                    title: "Schnellverweis",
                     links: [
                         {autoLinkId: "home"},
-                        {autoLinkId: "pinwall"},
-                        {autoLinkId: "planting"},
-                        //{autoLinkId: "download"},
-                        {autoLinkId: "sources"},
-                        {autoLinkId: "impressum"}
+                        {autoLinkId: "documentation"},
                     ]
                 },
                 {
-                    title: "Social Media",
-                    links: [
-                        {autoLinkId: "youtube", autoLinkType: "offsite"}
-                    ]
-                },
-                {
-                    title: "Featuring",
-                    links: [
-                        //{autoLinkId: "matchofmemes", autoLinkType: "offsite"},
-                        {autoLinkId: "soundriseproductions", autoLinkType: "offsite"},
-                        //{autoLinkId: "luckyapps", autoLinkType: "offsite"}
-                    ]
-                },
-                {
-                    title: "Files",
-                    //titleLink: {autoLinkId: "download"},
-                    links: [
-                        //{autoLinkId: "download_documentation", autoLinkType: "download"},
-                        //{autoLinkId: "download_windows", autoLinkType: "download"},
-                        //{autoLinkId: "download",customText:"WebApp"},
-                        {autoLinkId: "KurzumrissGR", autoLinkType: "offsite"},
-                        {autoLinkId: "Pflanzanbieter", autoLinkType: "offsite"},
-                        {autoLinkId: "PflanzanbieterOffen", autoLinkType: "offsite"},
-                        {autoLinkId: "CO2Verarbeitung", autoLinkType: "offsite"},
-                        {autoLinkId: "CO2VerarbeitungOffen", autoLinkType: "offsite"},
-                    ]
-                },
-                {
-                    title: "Other",
+                    title: "Sonstige",
                     hidden: true
                 }
             ];
@@ -435,7 +292,7 @@ function loadUniFooter(){
                                 +'<section class="fPath"></section>'
                                 +'<section class="fLinks"></section>'
                                 +'<section class="fFootnote">'
-                                    +'<div class="fLegal">Copyright © <span class="currentYear"></span> luckySiteWERKE - All rights reserved.</div>'
+                                    +'<div class="fLegal">Copyright © <span class="currentYear"></span> LuckyApps - All rights reserved.</div>'
                                     +'<div class="fVersion"><a class="autoLink" autoLink-id="updates"></a></div>'
                                 +'</section>';
                 document.getElementsByTagName("footer")[0].innerHTML = HTMLString;
@@ -493,7 +350,8 @@ function loadUniFooter(){
         }else{
             console.warn("UniFooter wurde blockiert");
         }
-    }catch{
+    }catch(err){
+        console.error(err);
         console.warn("Laden des UniFooters ist fehlgeschlagen. Der Footer wird möglicherweise nicht richtig angezeigt oder ist nicht verfügbar.");
     }
 }

@@ -1,0 +1,51 @@
+body{
+    margin: 0;
+    color: var(--text-color-light);
+    background-color: var(--background-color-light);
+}
+
+*{
+    /*font-family: MS UI Gothic;*/
+    /*font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgb(17, 115, 27);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: rgb(12, 85, 19);
+}
+
+:root{ /*Universelle Farbvariablen*/
+    --text-color-light: rgb(6, 5, 5);
+    --text-color-dark: rgb(242, 242, 242);
+    --background-color-dark: black;
+    --background-color-light: white;
+}
+
+button{
+    color: black;
+}
+
+.noscroll{
+    overflow: hidden;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.invisible{
+    visibility: hidden !important;
+}

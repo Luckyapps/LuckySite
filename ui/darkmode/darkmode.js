@@ -32,7 +32,7 @@ async function initDarkmode(){
                 document.getElementsByClassName("darkmode_toggle")[i].src= await getAbsoluteLink("media/Theme_Symbol.png");
             }
             try{
-                var config = await get_data(luckySite.darkmode.configFile);
+                var config = await getData(luckySite.darkmode.configFile);
             }catch{
                 console.warn(`Darkmode konnte nicht geladen werden. Es gibt ein Problem beim laden der Darkmode Konfigdatei (${luckySite.darkmode.configFile})`);
                 return;
@@ -138,7 +138,7 @@ async function initDarkmode(){
                 document.getElementsByClassName("darkmode_toggle")[i].src= await getAbsoluteLink("media/Theme_Symbol2.png");
             }
             try{
-                var config = await get_data(luckySite.darkmode.configFile);
+                var config = await getData(luckySite.darkmode.configFile);
             }catch{
                 console.warn(`Darkmode konnte nicht geladen werden. Es gibt ein Problem beim laden der Darkmode Konfigdatei (${luckySite.darkmode.configFile})`);
                 return;
@@ -238,7 +238,7 @@ async function initDarkmode(){
                 }
             }
         },
-        configFile: "darkmodeConfig.json"
+        configFile: "/darkmodeConfig.json"
     };
 
     if(typeof customDarkmodeConfig != "undefined"){ //Wurde der js-Code costomDarkmodeConfig = "FileName"; zur index.html hinzugefügt, den Pfad des configFiles ändern
