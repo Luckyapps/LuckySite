@@ -1,0 +1,12 @@
+.dm_back{
+    background-color: var(--background-color-dark);
+}
+
+.dm_text{
+    color:var(--text-color-dark);
+}
+
+.dm_darken_background_image{
+    background-blend-mode: multiply;
+    background-color: rgba(0,0,0,0.66) !important;
+}

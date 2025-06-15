@@ -2,22 +2,51 @@ var sitemap = {
     template: {
         de: {
             link: "/de/template.html",
-            path: "TEMPLATE"
+            name: "TEMPLATE"
         },
-        en:{
-            link: "/en/maintenance/?pageId=template",
-            path: "TEMPLATE"
+        en: {
+            link: "/en/template.html",
+            name: "Home"
         },
         parent: "home" //Gibt den Elternabschnitt an
     },
     home: {
         de: {
             link: "/de/",
-            path: "Home"
+            name: "Home"
+        }
+    },
+    documentation:{
+        de: {
+            link: "/dokumentation/dokumentation.html",
+            name: "Dokumentation"
+        },
+        parent: "home"
+    },
+    updates: {
+        de: {
+            link: "/updates.html",
+            name: luckySite.version
         },
         en: {
-            link: "/en/maintenance/?pageId=home",
-            path: "Home"
+            link: "/updates.html",
+            name: luckySite.version
+        },
+        fr: {
+            link: "/updates.html",
+            name: luckySite.version
+        },
+        es: {
+            link: "/updates.html",
+            name: luckySite.version
+        },
+        pl: {
+            link: "/updates.html",
+            name: luckySite.version
+        },
+        ch: {
+            link: "/updates.html",
+            name: luckySite.version
         }
     },
     maintenance: {
@@ -29,46 +58,23 @@ var sitemap = {
             link: "/en/maintenance/",
             path: "Page under Maintenance"
         },
+        ch: {
+            link: "/ch/%E7%BB%B4%E6%8A%A4/",
+            path: "维护"
+        },
         parent: "home"
     },
-    article: {
-        de: {
-            link: "/de/Artikel/",
-            path: "Artikel"
-        },
-        en: {
-            link: "/en/maintenance/?pageId=article",
-            path: "Article"
-        },
-        parent: "template"
-    },
-    updates: {
-        de: {
-            link: "/updates.html",
-            path: ahorn.version
-        },
-        en: {
-            link: "/updates.html",
-            path: ahorn.version
-        },
-        fr: {
-            link: "/updates.html",
-            path: ahorn.version
-        },
-        es: {
-            link: "/updates.html",
-            path: ahorn.version
-        },
-        pl: {
-            link: "/updates.html",
-            path: ahorn.version
+    autolinkdoc:{
+        de:{
+            link: "/autolinkdoc.html",
+            name: "AutoLink Dokumentation"
         }
     },
     getByLang: function(){ //Erstellt sitmap.byLang --> Auflistung der Seiten nach Sprache + Auflistung der ElternIds (parent)
         var sitemapLang = {}
         for(i=0;i<Object.keys(sitemap).length;i++){//Loop durch Namen
             var pageName = Object.keys(sitemap)[i];
-            if(pageName != "getByLang" && pageName != "byLang" && pageName != "correctBase"){
+            if(pageName != "getByLang" || pageName != "byLang"){
                 for(j=0;j<Object.keys(sitemap[pageName]).length;j++){//Loop durch Sprachen
                     if(!sitemapLang[Object.keys(sitemap[pageName])[j]]){//Wenn sprache noch nicht erfasst, hinzufügen
                         sitemapLang[Object.keys(sitemap[pageName])[j]] = {
@@ -96,25 +102,7 @@ var sitemap = {
             console.log("Retrying getParent");
             sitemap.getParent();
         }
-    },
-    correctBase: async function(){
-        var sitemapLang = {}
-        for(i=0;i<Object.keys(sitemap).length;i++){//Loop durch Namen
-            var pageName = Object.keys(sitemap)[i];
-            if(pageName != "getByLang" && pageName != "byLang" && pageName != "correctBase"){
-                for(j=0;j<Object.keys(sitemap[pageName]).length;j++){//Loop durch Sprachen
-                    var lang = Object.keys(sitemap[pageName])[j];
-                    if(lang != "parent"){
-                        sitemap[pageName][lang].link = await getAbsoluteLink(sitemap[pageName][lang].link);
-                    }
-                }
-            }
-        }
-        console.log("Sitemap für Base korrigiert");
-        return sitemap;
     }
 }
 
 sitemap.getByLang();
-
-sitemap.correctBase();
