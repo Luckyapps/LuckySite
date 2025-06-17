@@ -32,6 +32,9 @@ body{
     --text-color-dark: rgb(242, 242, 242);
     --background-color-dark: black;
     --background-color-light: white;
+
+    --content-width: 80%;
+    --content-width-margin: calc((100% - var(--content-width))/2);
 }
 
 button{

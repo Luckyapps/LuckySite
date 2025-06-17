@@ -67,7 +67,7 @@ var linkmanager = {
                     }else{
                         await setFooterLangs();
                     }
-                    setAutoNavbar();
+                    //setAutoNavbar();
                     autoLink_initLangs();
                     setAutoLinks();
                     linkmanager.loaded = true;
@@ -92,7 +92,7 @@ var linkmanager = {
         }else{
             await setFooterLangs();
         }
-        setAutoNavbar();
+        //setAutoNavbar();
         autoLink_initLangs();
         setAutoLinks();
         linkmanager.loaded = true;
@@ -353,28 +353,6 @@ function loadUniFooter(){
     }catch(err){
         console.error(err);
         console.warn("Laden des UniFooters ist fehlgeschlagen. Der Footer wird möglicherweise nicht richtig angezeigt oder ist nicht verfügbar.");
-    }
-}
-
-function setAutoNavbar(){
-    try{
-        var navbarElements = linkmanager.pageData.navbar;
-        if(document.getElementsByTagName("nav")){
-            var nav = document.getElementsByTagName("nav")[0];
-            var navChilds = nav.children;
-            if(navbarElements.length != 0){
-                nav.innerHTML = '<div id="closeNav">X</div>';
-                for(i=0;i<navbarElements.length;i++){
-                    if(navbarElements[i]=="home"){
-                        nav.innerHTML += "<img  alt='Home | luckySite Logo' src='/media/Logo_Idee_6.png' class='autoLink' autoLink-type='onsiteNOa' autoLink-Id='"+ navbarElements[i] +"'></img>"
-                    }else{
-                        nav.innerHTML += "<a class='autoLink nava' autoLink-type='onsite' autoLink-Id='"+ navbarElements[i] +"'></a>";
-                    }
-                }
-            }
-        }
-    }catch(err){
-        console.warn("Beim erstellen der AutoNavbar ist ein Fehler aufgetreten.")
     }
 }
 

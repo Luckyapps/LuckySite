@@ -16,7 +16,8 @@ scriptFileList = [
     "/ui/alertBox/alertBox.js",
     "/ui/uiMainControl.js",
     "/ui/darkmode/darkmode.js",
-    "/ui/navbar/navbar.js"
+    "/ui/navbar/navbar.js",
+    "/ui/header/header.js"
 ];
 
 stylesheetFileList = [
@@ -24,7 +25,9 @@ stylesheetFileList = [
     "/dokumentation/dokumentation.css",
     "/ui/footer.css",
     "/ui/mainStyle.css",
-    "/ui/navbar/navbar.css"
+    "/ui/navbar/navbar.css",
+    "/ui/header/header.css",
+    "/ui/sections.css"
 ];
 
 loadEmbeddedScripts(scriptFileList);
@@ -43,9 +46,9 @@ async function initLuckySite(){//App startpunkt
 
     start_error_stylesheet() //alertBox --> Muss noch überarbeitet werden
 
-    await linkmanager.load();
+    await linkmanager.load(); //Hier sollten die nicht Kernfunktionen für navbar und footer getrennt werden
 
-    initUi();
+    initUi(); //Probleme im Kontrollfluss mit loadNavbar();
 
     await sleep(100);
     document.getElementById("loadingScreen").style.display = "none";

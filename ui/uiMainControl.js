@@ -1,8 +1,9 @@
 function initUi(){
+    setAutoNavbar(); //integration mit linkmanager prüfen
+    loadNavbar(); //Einfügen der Steuerelemente muss überarbeitet werden.
+    
     initDarkmode();
     setAutoDarkmode();
-
-    loadNavbar();
 }
 
 function setTextfields(){ //Autofill Textfelder

@@ -44,7 +44,7 @@ section{
 }
 
 .navBackground{
-    background-color: rgba(71, 71, 71, 0.97);
+    background-color: rgb(33 33 33 / 18%);;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     -webkit-box-shadow: 0px 0px 33px 10px rgba(0, 0, 0, 0.623); 

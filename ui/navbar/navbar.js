@@ -17,7 +17,37 @@ window.addEventListener("scroll",(evt)=>{
     }
 });
 
+function setAutoNavbar(){ //Hier fehlt resilienz mit linkmanager integration
+    try{
+        var navbarElements = linkmanager.pageData.navbar;
+        if(document.getElementsByTagName("nav")){
+            var nav = document.getElementsByTagName("nav")[0];
+            var navChilds = nav.children;
+            if(navbarElements.length != 0){
+                nav.innerHTML = '<div id="closeNav">X</div>';
+                for(i=0;i<navbarElements.length;i++){
+                    if(navbarElements[i]=="home"){
+                        nav.innerHTML += "<img  alt='Home | luckySite Logo' src='/media/Logo_Idee_6.png' class='autoLink' autoLink-type='onsiteNOa' autoLink-Id='"+ navbarElements[i] +"'></img>"
+                    }else{
+                        nav.innerHTML += "<a class='autoLink nava' autoLink-type='onsite' autoLink-Id='"+ navbarElements[i] +"'></a>";
+                    }
+                }
+                setAutoLinks();
+            }
+        }
+    }catch(err){
+        console.warn("Beim erstellen der AutoNavbar ist ein Fehler aufgetreten.")
+    }
+}
+
 function loadNavbar(){
+    document.body.innerHTML += `<div id="settings">
+          <span id="settings_popup_lang" class="navbar_popup navbar_popup_lang fLang invisible" fLang-img="true" fLang-optionsOnly="true"></span>
+          <img id="settings_lang" tabindex="0" class="settings_dynamic_img"></img>
+          <img alt="darkmode Symbol" class="darkmode_toggle settings_dynamic_img" tabindex="0" src="/media/Theme_Symbol.png"></img>
+          <img alt="Seitenleiste öffnen" id="navBurger" src="/media/burger - Kopie.svg"></img>
+        </div>`;
+
     if(document.getElementById("closeNav")==undefined || document.getElementById("navBurger") == undefined){
         console.warn("Keine Navbar-Steuerelemente verfügbar.");
         return;

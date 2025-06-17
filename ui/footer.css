@@ -1,6 +1,6 @@
 footer{
     background-color: rgb(64, 64, 64);
-    padding: 40px 10% 10px 10%;
+    padding: 40px var(--content-width-margin) 10px var(--content-width-margin);
     color: rgb(242, 242, 242);
     margin-top: 20px;
     display: flex;
