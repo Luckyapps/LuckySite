@@ -45,7 +45,7 @@ async function initLuckySite(){//App startpunkt
 
     initlang();
 
-    start_error_stylesheet() //alertBox --> Muss noch überarbeitet werden
+    start_alertBox_stylesheet() //alertBox --> Muss noch überarbeitet werden
 
     await linkmanager.load(); //Hier sollten die nicht Kernfunktionen für navbar und footer getrennt werden
 
