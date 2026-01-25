@@ -1,4 +1,4 @@
-var sitemap = {
+luckySite.sitemap = {
     template: {
         de: {
             link: "/de/template.html",
@@ -107,5 +107,7 @@ var sitemap = {
         }
     }
 }
+
+var sitemap = luckySite.sitemap; //sitemap mit luckySite verknüpfen
 
 sitemap.getByLang();

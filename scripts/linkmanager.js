@@ -1,6 +1,7 @@
-var linkmanager = {
-    loaded: false,
-    load: async function(pathLangForce){
+var linkmanager = luckySite.linkmanager; //Verknüpfe linkmanager mit LuckySite als call by reference (linkmanager und luckySite.linkmanager spiegeln sich)
+
+linkmanager.loaded = false,
+linkmanager.load = async function(pathLangForce){
         if(pathLangForce==undefined){
             var pathLang = window.location.pathname.substring(1,3);
         }else{
@@ -67,7 +68,6 @@ var linkmanager = {
         }
         linkmanager.loaded = true;
     }
-}
 
 function setAutoLinks(){
     var autoLinks = document.getElementsByClassName("autoLink");

@@ -4,7 +4,9 @@ window.addEventListener("load", initLuckySite);
 document.body.innerHTML += "<div id='loadingScreen' style='position:fixed;top:0;left:0;width:100vw;height:100vh;backdrop-filter: blur(6px);z-index:999'></div>";
 
 luckySite = {
-    version: "va.25061.0"
+    version: "va.25061.0",
+    linkmanager: {},
+    sitemap: {}
 };
 
 scriptFileList = [
