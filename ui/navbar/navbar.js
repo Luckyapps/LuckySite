@@ -2,7 +2,7 @@ var navbarBackground = false;
 var navIsOpen = false;
 var langPopupOpen = false;
 
-window.addEventListener("scroll",(evt)=>{
+window.addEventListener("scroll",(evt)=>{ //Hintergrund der Navbar gesteurt durchs scrollen ein-/ausblenden
     var nav = document.getElementsByTagName("nav")[0];
     if(window.scrollY > 100){
         if(!navbarBackground){
@@ -40,7 +40,7 @@ function setAutoNavbar(){ //Hier fehlt resilienz mit linkmanager integration
     }
 }
 
-function loadNavbar(){
+function loadNavbar(){ // --> In laodNavbarSettings() ändern !!!!!!
     document.body.innerHTML += `<div id="settings">
           <span id="settings_popup_lang" class="navbar_popup navbar_popup_lang fLang invisible" fLang-img="true" fLang-optionsOnly="true"></span>
           <img id="settings_lang" tabindex="0" class="settings_dynamic_img"></img>

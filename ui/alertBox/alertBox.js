@@ -9,12 +9,13 @@ async function start_error_stylesheet(){
 }
 
 function load_error_stylesheet(){
-    error_container = document.getElementById("error_container");
+    cssLoader("/ui/alertBox/alertBox.css");
 }
 
 var error = {};
 
 error.show = function (error_info, error_type){   
+    error_container = document.getElementById("error_container");
     if(error_type == "closed"){ //vorgefertigter Typ
         error_container.innerHTML = "Keine Verbindung zum Server möglich. <br>Bitte später noch einmal versuchen oder Seite neu Laden.";
     }else if(error_type == "info_load"||error_type == "info"){

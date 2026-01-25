@@ -2,6 +2,7 @@ header{
     background: url("/media/hedge_double.jpg") center scroll;
     background-size: cover;/*Wenn nötig: Bild reinquetschen*/
     position: relative;
+    height: 100vh;
     /*-webkit-box-shadow: inset 0px -21px 31px -1px rgba(0,0,0,0.66);
     box-shadow: inset 0px -21px 31px -1px rgba(0,0,0,0.66);*/
 }

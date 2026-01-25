@@ -3,7 +3,8 @@ window.addEventListener("resize",resizeHeader);
 
 var headerResizeCount = 0;
 
-function resizeHeader(){
+function resizeHeader(){ //Funktion ohne js durch setzen von height = 100vh in header
+    return;
     //console.log("resize");
     headerResizeCount++;
     if(document.getElementsByTagName("header")[0]){

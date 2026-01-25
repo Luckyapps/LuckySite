@@ -54,11 +54,11 @@ async function getData(url, noinfo){ //Daten im JSON format aus externer Quelle 
         if(url.includes("http")){
             url = url.replace("http","https");
             //console.log(url);
+        }else{
+            console.warn(`Datenabruf von Quelle nicht über http/https. URL: ${url}`);
         }
-    }else{
-        //console.log(url);
     }
-    
+
     await fetch(url)
         .then((response) => response.text())
         .then((data_text) => {data = JSON.parse(data_text)});

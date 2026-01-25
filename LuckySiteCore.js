@@ -17,13 +17,14 @@ scriptFileList = [
     "/ui/uiMainControl.js",
     "/ui/darkmode/darkmode.js",
     "/ui/navbar/navbar.js",
-    "/ui/header/header.js"
+    "/ui/header/header.js",
+    "/ui/footer/footer.js"
 ];
 
 stylesheetFileList = [
     "/ui/darkmode/darkmode.css",
     "/dokumentation/dokumentation.css",
-    "/ui/footer.css",
+    "/ui/footer/footer.css",
     "/ui/mainStyle.css",
     "/ui/navbar/navbar.css",
     "/ui/header/header.css",
