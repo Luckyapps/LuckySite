@@ -1,4 +1,7 @@
 window.addEventListener("load", initLuckySite);
+window.addEventListener("load", async ()=>{
+    if ('serviceWorker' in navigator) { navigator.serviceWorker.register(await getAbsoluteLink("sw.js"), { scope: '/' }).then(function(registration){registration.update()})}; //experimenteller Offlinemodus
+}) 
 
 //Ladebildschirm setzen
 document.body.innerHTML += "<div id='loadingScreen' style='position:fixed;top:0;left:0;width:100vw;height:100vh;backdrop-filter: blur(6px);z-index:999'></div>";
