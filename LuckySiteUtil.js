@@ -55,7 +55,7 @@ async function getData(url, noinfo){ //Daten im JSON format aus externer Quelle 
             url = url.replace("http","https");
             //console.log(url);
         }else{
-            console.warn(`Datenabruf von Quelle nicht über http/https. URL: ${url}`);
+            //console.warn(`Datenabruf von Quelle nicht über http/https. URL: ${url}`);
         }
     }
 
@@ -121,3 +121,21 @@ function createHTML(htmlString) { //HTML element erstellen (String zu HTML-Eleme
     // Change this to div.childNodes to support multiple top-level nodes.
     return div.firstChild;
   }
+
+function getCSSVariable(variableName){
+    try{
+        root = document.querySelector(":root");
+        return getComputedStyle(root).getPropertyValue(variableName);
+    }catch(err){
+        console.warn(`[getCSSVariable] Es ist ein Problem beim auslesen der CSS Variable ${variableName} aufgetreten.`)
+    }
+}
+
+function setCSSVariable(variableName, value){
+    try{
+        root = document.querySelector(":root");
+        root.style.setProperty(variableName, value);
+    }catch(err){
+        console.warn(`[setCSSVariable] Es ist ein Problem beim setzen der CSS Variable ${variableName} auf ${value} aufgetreten.`)
+    }
+}

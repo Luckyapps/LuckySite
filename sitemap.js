@@ -65,14 +65,14 @@ luckySite.sitemap = {
             link: "/dokumentation/autolinkdoc.html",
             name: "AutoLink Dokumentation"
         }
-    },/*
+    },
     test:{
         de:{
             link: "/de/test/",
             name: "TESTSEITE"
         },
         parent: "home"
-    },*/
+    },
     getByLang: function(){ //Erstellt sitmap.byLang --> Auflistung der Seiten nach Sprache + Auflistung der ElternIds (parent)
         var sitemapLang = {}
         for(i=0;i<Object.keys(sitemap).length;i++){//Loop durch Namen
