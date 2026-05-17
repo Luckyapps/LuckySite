@@ -11,8 +11,8 @@ luckySite = {
     linkmanager: {},
     sitemap: {},
     mediaReference: {
-        icon: "/media/DE Symbol.png",
-        homeSymbol: "/media/Logo_Idee_6.png"
+        icon: "/media/luckyapps_logo.png",
+        homeIcon: "/media/luckyapps_logo.png"
     }
 };
 
