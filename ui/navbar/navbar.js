@@ -102,9 +102,12 @@ function loadNavbar(){ // --> In laodNavbarSettings() ändern !!!!!!
 };
 
 window.addEventListener("resize",(evt)=>{
-    if(window.innerWidth>650){
-        document.getElementsByTagName("nav")[0].classList.remove("mobileNavOpen");
-        document.getElementsByTagName("nav")[0].classList.remove("mobileNavClose");
-        document.getElementsByTagName("html")[0].classList.remove("noscroll");
+    try{
+        if(window.innerWidth>650){
+            document.getElementsByTagName("nav")[0].classList.remove("mobileNavOpen");
+            document.getElementsByTagName("nav")[0].classList.remove("mobileNavClose");
+            document.getElementsByTagName("html")[0].classList.remove("noscroll");
+        }
+    }catch(err){
     }
 });
