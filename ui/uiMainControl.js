@@ -1,6 +1,9 @@
 async function initUi(){
     setAutoNavbar(); //integration mit linkmanager prüfen
-    loadNavbar(); //Einfügen der Steuerelemente muss überarbeitet werden.
+
+    if(luckySite.settings.showNavbarSettings){
+        loadNavbar(); //Einfügen der Steuerelemente muss überarbeitet werden.
+    }
 
     try{
         getAutoLinksJson();

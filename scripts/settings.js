@@ -2,7 +2,7 @@ var settingsStorageName = "luckySiteSettings";
 
 function initSettings(){ //ONLOAD
     luckySite.loadSettings = ()=>{
-        var settingsVersion = 1; //Muss bei änderung der Standardeinstellungen geändert werden.
+        var settingsVersion = 2; //Muss bei änderung der Standardeinstellungen geändert werden.
         if(localStorage.getItem(settingsStorageName)){
             if(settingsVersion > JSON.parse(localStorage.getItem(settingsStorageName)).settingsVersion){
                 localStorage.removeItem(settingsStorageName);
@@ -27,7 +27,8 @@ function initSettings(){ //ONLOAD
                 downloadToLink: true, //Ist der Wert true, werden AutoLinks mit autoLink-type="download" als normaler Link geladen, wenn download_name im linkmanger nicht gesetzt oder "wartung" ist.
                 uniFooter: true, //Stellt ein, ob ein Universeller Footer geladen wird.
                 uniFooterSetHTML: true, //Wenn true wird das gesammt HTML im footer Tag automatisch gesetzt.
-                homeId: "home" //Die Sitemap Id, der Home Seite
+                homeId: "home", //Die Sitemap Id, der Home Seite
+                showNavbarSettings: true //Die Einstellungen für Sprache und Darkmode automatisch in die Seite einfügen. (Standard: true)
             }
             localStorage.setItem(settingsStorageName, JSON.stringify(luckySite.settings));
         }
