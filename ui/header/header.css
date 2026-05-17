@@ -1,10 +1,16 @@
+:root{
+    --scrollbutton-bottom: 10px;
+    --header-height: 100vh;
+    --header-text-color: rgb(242, 242, 242);
+}
+
 header{
     background: url("/media/hedge_double.jpg") center scroll;
     background-size: cover;/*Wenn nötig: Bild reinquetschen*/
     position: relative;
-    height: 100vh;
-    /*-webkit-box-shadow: inset 0px -21px 31px -1px rgba(0,0,0,0.66);
-    box-shadow: inset 0px -21px 31px -1px rgba(0,0,0,0.66);*/
+    height: var(--header-height);
+    -webkit-box-shadow: inset 0px -21px 31px -1px rgba(0,0,0,0.66);
+    box-shadow: inset 0px -21px 31px -1px rgba(0,0,0,0.66);
 }
 
 .headerTitle{
@@ -24,7 +30,7 @@ header{
 }
 
 .headerTitle h1, .headerTitle h2{
-    color: rgb(242, 242, 242);
+    color: var(--header-text-color);
     margin:0;
 }
 
@@ -68,16 +74,12 @@ header{
     }
 }
 
-:root{
-    --scrollbutton-bottom: 10px;
-}
-
 #scrollbutton{
     position: absolute;
     bottom: var(--scrollbutton-bottom);
     left:50%;
     transform: translate(-50%,0);
-    color: rgb(242, 242, 242);
+    color: var(--header-text-color);
     font-size: 30px;
     cursor:pointer;
     animation-name: scrollbutjump;
