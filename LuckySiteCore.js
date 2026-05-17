@@ -9,7 +9,11 @@ document.body.innerHTML += "<div id='loadingScreen' style='position:fixed;top:0;
 luckySite = {
     version: "va.25061.0",
     linkmanager: {},
-    sitemap: {}
+    sitemap: {},
+    mediaReference: {
+        icon: "/media/DE Symbol.png",
+        homeSymbol: "/media/Logo_Idee_6.png"
+    }
 };
 
 scriptFileList = [
@@ -54,7 +58,7 @@ async function initLuckySite(){//App startpunkt
 
     await linkmanager.load(); //Hier sollten die nicht Kernfunktionen für navbar und footer getrennt werden
 
-    initUi(); //Probleme im Kontrollfluss mit loadNavbar();
+    await initUi(); //Probleme im Kontrollfluss mit loadNavbar();
 
     await sleep(100);
     document.getElementById("loadingScreen").style.display = "none";

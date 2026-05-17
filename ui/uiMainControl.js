@@ -1,4 +1,6 @@
 async function initUi(){
+    setFavicon(luckySite.mediaReference.icon);
+
     setAutoNavbar(); //integration mit linkmanager prüfen
 
     if(luckySite.settings.showNavbarSettings){
@@ -29,6 +31,18 @@ async function initUi(){
 
     initDarkmode();
     setAutoDarkmode();
+}
+
+function setFavicon(path){
+    try{
+        var link = document.querySelector("link[rel~='icon']");
+        var appleLink = document.querySelector("link[rel~='apple-touch-icon']");
+    
+        link.href = path;
+        appleLink.href = path; 
+    }catch(err){
+        console.warn(`[setFavicon] Konnte Favicon mit path ${path} nicht setzten.`)
+    }
 }
 
 function setTextfields(){ //Autofill Textfelder
